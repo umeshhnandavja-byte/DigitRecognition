@@ -26,7 +26,7 @@ l2_active = Activation_ReLU()
 loss_activation = Activation_Softmax()
 
 print("Loading trained weights...")
-saved_data = np.load('best_model_weights_2.npz')
+saved_data = np.load('best_model_weights_6.npz')
 
 Layer1.weights = saved_data['l1_w']
 Layer1.biases = saved_data['l1_b']

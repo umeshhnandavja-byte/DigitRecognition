@@ -8,8 +8,8 @@ X = X / 255
 
 Y = data['label'].values
 
-X_train = X[:22400]
-Y_train = Y[:22400]
+X_train = X[:28000]
+Y_train = Y[:28000]
 
 X_val = X[5600:]
 Y_val = Y[5600:]
@@ -79,9 +79,9 @@ class Optimizer_SGD:
         layer.weights -= self.learning_rate * layer.dweights
         layer.biases -= self.learning_rate * layer.dbiases
 
-Layer1 = Layer_Dense(784, 16)
-Layer2 = Layer_Dense(16, 16)
-Layer3 = Layer_Dense(16, 10)
+Layer1 = Layer_Dense(784, 256)
+Layer2 = Layer_Dense(256, 256)
+Layer3 = Layer_Dense(256, 10)
 
 l1_active = Activation_ReLU()
 l2_active = Activation_ReLU()
@@ -89,7 +89,7 @@ l2_active = Activation_ReLU()
 loss_activation = Activation_Softmax()
 loss_fun = LossEntropy()
 
-optimizer = Optimizer_SGD(learning_rate=0.1)
+optimizer = Optimizer_SGD(learning_rate=0.095)
 
 best_loss = float('inf')
 patience = 5
